@@ -1,4 +1,4 @@
-ks_jquery_plugins
+KsJQueryPlugins
 =================
 
 A set of jquery plugins

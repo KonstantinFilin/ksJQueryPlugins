@@ -1,3 +1,4 @@
+// https://github.com/KonstantinFilin/ksJQueryPlugins/tree/master/ConfirmRedirect
 (function ( $ ) {
     
     $.fn.confirmRedirect = function(options) {
@@ -6,9 +7,11 @@
         }, options );
         
         this.each(function() {
-            $(this).click(function(event) {
-                if(confirm(settings.confirmTitle)) {
-                    var url = $(this).attr("href");
+            var thisEl = $(this);
+            var title = thisEl.attr("title");
+            thisEl.click(function(event) {
+                if(confirm(title ? title + "?" : settings.confirmTitle)) {
+                    var url = thisEl.attr("href");
                     if(url) {
                         document.location.href = url;
                     }
